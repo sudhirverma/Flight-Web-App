@@ -4,9 +4,11 @@
   "description": "In Progress",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf out || rmdir out /s /q",
-    "compile": "tsc -p ./",
-    "start": "npm run clean && npm run compile"
+    "clean": "rm -rf dist || rmdir dist /s /q",
+    "serve": "node dist/server.js",
+    "compile": "tsc",
+    "watch-ts": "tsc -w",
+    "start": "npm run clean && npm run compile && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,11 @@
   },
   "homepage": "https://github.com/sudhirverma/Flight-Web-App#readme",
   "devDependencies": {
+    "@types/express": "^4.17.1",
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
